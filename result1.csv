@@ -1,0 +1,35 @@
+activity,people_rep,name,bug_name,comment,bug_id,people_ass
+,Bernie,Bernie,Changed server not reflected in Saved password list,"User Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0
+Build ID: 20160604131506
+
+Steps to reproduce:
+
+Changed Server on existing email account. 
+from  imap-mail.outlook.com to imap.telstra.com
+Re entered password and saved. 
+
+Checking the password in Password Manager (to delete redundant  server information & password), new entry was only identified by date changed.
+
+
+
+
+
+Actual results:
+
+The ""new"" password site is listed as imap://imap-mail.outlook.com(imap://imap-mail.outlook.com) which is the old site.
+
+
+Expected results:
+
+The ""new"" password site should be listed  as imap://imap.telstra.com(imap://imap.telstra.com)",Bug 1288988,:aceman
+OS: Unspecified → Windows 10Hardware: Unspecified → x86_64,Bernie,,Changed server not reflected in Saved password list,,Bug 1288988,:aceman
+"CC: acelists, vseerrorComponent: Untriaged → SecurityWhiteboard: [dupme]",Bernie,,Changed server not reflected in Saved password list,,Bug 1288988,:aceman
+Assignee: nobody → acelistsDepends on: 302388,Bernie,:aceman,Changed server not reflected in Saved password list,I'll see if this can be fixed in bug 302388 in one go. But changing the hostname is harder than just username so I'll see what can be done.,Bug 1288988,:aceman
+CC: hubertus,Bernie,Hubertus vonStreit,Changed server not reflected in Saved password list,"Bug us still there in 45.8 on LinuxMint 18.1 Cinnamon 64-bit.
+I just changed the password (not server)for an account and Thunderbird worked well.
+- But the new password was shown only for the IMAP-entry, SMTP-entry showed old password.
+- I deleted entry for SMTP in order to let thunderbird create a new entry - nothing happened
+- So the password has internally been changed properly, but the result is not shown in password-listing
+
+Regards,
+Hubertus",Bug 1288988,:aceman
