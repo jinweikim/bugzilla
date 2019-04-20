@@ -31,16 +31,28 @@ class BugzillaPipeline(object):
 
         #g.open('graph.rdf',create = True)
 
-        Bug_id = rdflib.URIRef('http://www.bugzilla.com/'+item['Bug_id'])
-        Bug_name = rdflib.URIRef('http://www.bugzilla.com/'+item['Bug_name'])
-        Product = rdflib.URIRef('http://www.bugzilla.com/'+item['Product'])
-        Component = rdflib.URIRef('http://www.bugzilla.com/'+item['Component'])
-        Reported = rdflib.URIRef('http://www.bugzilla.com/'+item['Reported'])
-        Modified = rdflib.URIRef('http://www.bugzilla.com/'+item['Modified'])
-        Assignee = rdflib.URIRef('http://www.bugzilla.com/'+item['Assignee'])
-        Reporter = rdflib.URIRef('http://www.bugzilla.com/'+item['Reporter'])
-        TriageOwner = rdflib.URIRef('http://www.bugzilla.com/'+item['TriageOwner'])
-        Description = rdflib.URIRef('http://www.bugzilla.com/'+item['Description'])
+        # Bug_id = rdflib.URIRef('http://www.bugzilla.com/'+item['Bug_id'])
+        # Bug_name = rdflib.URIRef('http://www.bugzilla.com/'+item['Bug_name'])
+        # Product = rdflib.URIRef('http://www.bugzilla.com/'+item['Product'])
+        # Component = rdflib.URIRef('http://www.bugzilla.com/'+item['Component'])
+        # Reported = rdflib.URIRef('http://www.bugzilla.com/'+item['Reported'])
+        # Modified = rdflib.URIRef('http://www.bugzilla.com/'+item['Modified'])
+        # Assignee = rdflib.URIRef('http://www.bugzilla.com/'+item['Assignee'])
+        # Reporter = rdflib.URIRef('http://www.bugzilla.com/'+item['Reporter'])
+        # TriageOwner = rdflib.URIRef('http://www.bugzilla.com/'+item['TriageOwner'])
+        # Description = rdflib.URIRef('http://www.bugzilla.com/'+item['Description'])
+
+        Bug_id = rdflib.Literal(item['Bug_id'].strip())
+        Bug_name = rdflib.Literal(item['Bug_name'].strip())
+        Product = rdflib.Literal(item['Product'].strip())
+        Component = rdflib.Literal(item['Component'].strip())
+        Reported = rdflib.Literal(item['Reported'].strip())
+        Modified = rdflib.Literal(item['Modified'].strip())
+        Assignee = rdflib.Literal(item['Assignee'].strip())
+        Reporter = rdflib.Literal(item['Reporter'].strip())
+        TriageOwner = rdflib.Literal(item['TriageOwner'].strip())
+        Description = rdflib.Literal(item['Description'].strip())
+
 
         Bug_name_list.append(item['Bug_name'].strip())
         Product_list.append(item['Product'].strip())
@@ -49,18 +61,32 @@ class BugzillaPipeline(object):
         Component_list.append(item['Component'].strip())
         Assignee_list.append(item['Assignee'].strip())
         Reporter_list.append(item['Reporter'].strip())
-        TriageOwner_list.append(item['TriageOwner'].strip())
-        Description_list.append(item['Description'].strip())
+        if item['TriageOwner'].strip() != '':
+            TriageOwner_list.append(item['TriageOwner'].strip())
+        if item['Description'].strip() != '':
+            Description_list.append(item['Description'].strip())
 
-        r1 = rdflib.URIRef('http://www.bugzilla.com/isBugname')
-        r2 = rdflib.URIRef('http://www.bugzilla.com/isProduct')
-        r3 = rdflib.URIRef('http://www.bugzilla.com/isComponent')
-        r4 = rdflib.URIRef('http://www.bugzilla.com/ReportedTime')
-        r5 = rdflib.URIRef('http://www.bugzilla.com/ModifiedTime')
-        r6 = rdflib.URIRef('http://www.bugzilla.com/isAssignee')
-        r7 = rdflib.URIRef('http://www.bugzilla.com/isReporter')
-        r8 = rdflib.URIRef('http://www.bugzilla.com/isTriageOwner')
-        r9 = rdflib.URIRef('http://www.bugzilla.com/isDescription')
+        # r1 = rdflib.URIRef('http://www.bugzilla.com/isBugname')
+        # r2 = rdflib.URIRef('http://www.bugzilla.com/isProduct')
+        # r3 = rdflib.URIRef('http://www.bugzilla.com/isComponent')
+        # r4 = rdflib.URIRef('http://www.bugzilla.com/ReportedTime')
+        # r5 = rdflib.URIRef('http://www.bugzilla.com/ModifiedTime')
+        # r6 = rdflib.URIRef('http://www.bugzilla.com/isAssignee')
+        # r7 = rdflib.URIRef('http://www.bugzilla.com/isReporter')
+        # r8 = rdflib.URIRef('http://www.bugzilla.com/isTriageOwner')
+        # r9 = rdflib.URIRef('http://www.bugzilla.com/isDescription')
+
+        n = rdflib.Namespace("http://www.bugzilla.com/")
+
+        r1 = n.isBugname
+        r2 = n.isProduct
+        r3 = n.isComponent
+        r4 = n.ReportedTime
+        r5 = n.ModifiedTime
+        r6 = n.isAssignee
+        r7 = n.isReporter
+        r8 = n.isTriageOwner
+        r9 = n.isDescription
 
         g.add((Bug_id,r1,Bug_name))
         g.add((Bug_id,r2,Product))
@@ -123,7 +149,7 @@ class BugzillaPipeline(object):
 
         return item
     def close_spider(self,spider):
-        g.serialize('graph.rdf')
+        g.serialize('graph.rdf',format='pretty-xml')
 
         file = open('Bug_name_list', 'w')
         file.write(str(Bug_name_list))

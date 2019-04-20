@@ -8,7 +8,7 @@ s4 = 'The component of bug 1306942 is Inspector '
 s5 = 'The assignee of bug 1306942 is [:Towkir] Ahmed '
 s6 = 'The reporter of bug 1306942 is magicp'
 s7 = 'The Triage Owner of bug 1306942 is Gabriel[:gl](ΦωΦ) '
-s8 = '''The description of bug 1306942 is  User Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0 
+s8 = '''The description of bug 1306942 is User Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0 
 Build ID: 20161001030430
 
 Steps to reproduce:
@@ -32,16 +32,24 @@ all-tabs-menu should place in the end side.'''
 # nltk.download()
 all_s = {s0,s1,s2,s3,s4,s5,s6}
 sentence = 'The product of bug 59908 is mozilla.org.Graveyard'
-# for s in all_s:
-#     n = tools.sen2NLPatt(s)
-#     print('原句: '+s)
-#     print('自然语言模式: ')
-#     print(n)
-#     print('支持对: ')
-#     print(n.supp)
-#     print('\n')
-print(tools.sen2NLPatt(s7))
-print(tools.sen2NLPatt(s8))
+for s in all_s:
+    n = tools.sen2NLPatt(s)
+    print('原句: '+s)
+    print('自然语言模式: ',end="")
+    print(n)
+    print('类型对: ', end="")
+    print(n.types)
+    print('实体对: ', end="")
+    print(n.supp)
+    print('关系: ', end="")
+    print(tools.getR(n))
+    print('模板1: ',end="")
+    print(tools.getTemplate_1(n))
+    print('模板0: ', end="")
+    print(tools.getTemplate_0(n))
+    print('\n')
+# print(tools.sen2NLPatt(s7))
+#print(tools.sen2NLPatt(s8))
 # tokens = nltk.word_tokenize(s0)
 # n0 = tools.sen2NLPatt(s0)
 # n4 = tools.sen2NLPatt(s4)

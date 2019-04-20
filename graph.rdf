@@ -1,567 +1,1120 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-   xmlns:ns1="http://www.bugzilla.com/"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:ns1="http://www.bugzilla.com/"
 >
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1472642">
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/[Affected versions]:&#10;- Nightly 63.0a1 Build ID 20180701220749&#10;&#10;[Affected Platforms]:&#10;- All Windows&#10;- All Mac&#10;- All Linux&#10;&#10;[Steps to reproduce]:&#10;1. Open the Browser and navigate to the about:welcome page.&#10;2. Click the "Continue" button and observe the behavior.&#10;&#10;[Expected results]:&#10;- The "Email" field is focused.&#10;&#10;[Actual results]:&#10;- The "Email" field is highlighted with red and the "Valid email required" message appears in a red bubble towards the top of the page, but the field is not focused.&#10;&#10;[Notes]:&#10;- Attached a screen recording of the issue.'/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/10 months ago"/>
-    <ns1:isBugname rdf:resource='http://www.bugzilla.com/The empty "Email" field is not focused when the "Continue" button is clicked on about:welcome'/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Ciprian Muresan [:cmuresan], Experiments QA"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/9 months ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
+  <rdf:Description rdf:about="Bug 148007">
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isReporter>dsirnapalli</ns1:isReporter>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isDescription><![CDATA[<label value="Click here:" control="open-button"/>
+
+<description>
+  Testing Description tag for Accessibility. 
+</description>  
+
+Add the above text to the xul file and open in mozilla or embedding application.
+open Inspect and click on "show highlight rectangle". Move the cursor on to the
+label text or description text. watch the State attribute in Inspect tool. You
+see "readonly, focusable, selectable". It should show only "readonly", since
+text is not focusable and selectable.]]></ns1:isDescription>
+    <ns1:isTriageOwner>James Teh [:Jamie]</ns1:isTriageOwner>
+    <ns1:isComponent>Disability Access APIs</ns1:isComponent>
+    <ns1:isBugname>ns</ns1:isBugname>
+    <ns1:ModifiedTime>17 years ago</ns1:ModifiedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1453953">
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Alexis Beingessner [:Gankro]"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Jessie [:jbonisteel] plz needinfo"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/mozregression --good 2018-04-01 --bad 2018-04-10 --pref gfx.webrender.all:true startup.homepage_welcome_url:'"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/regression: Zoom level indicator is ugly in its fade-in animation (choose the right animation scale for blob images)"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Jan Andre Ikenmeyer [:darkspirit]"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Graphics: WebRender&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/7 months ago"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/a year ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
+  <rdf:Description rdf:about="Bug 109851">
+    <ns1:isDescription>I've been noticing double events for some time -- but they don't occur in MFCEmbed.
+
+It comes down to the fact that HTML events are bubbling up to the chrome's
+nsRootAccessible as well. We've been creating an nsRootAccessible that listens
+for events for both the HTML document and the XUL document.
+
+I believe we really only want to create the nsRootAccessible's for the true root.</ns1:isDescription>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ModifiedTime>15 years ago</ns1:ModifiedTime>
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isBugname>Active Accessibility: extra accessible events being generated</ns1:isBugname>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:isComponent>Bookmarks &amp; History</ns1:isComponent>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 131918">
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/John Morrison"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a month ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Infinite loop in nsEventStateManager::MoveFocusToCaret, tabbing to form controls&#10;&#10;Somehow, I've hit an infinite loop while doing some testing of form controls.&#10;&#10;(NOTE: this happens with either the current (c++) implementation of form controls&#10;or with the xbl-based form controls. It is independent of [XBLFC].)&#10;&#10;Steps to reproduce:&#10;1) start browser and load the first attachment to this bug (simple form)&#10;2) tab out of urlbar to first link, and tab again to first &lt;select&gt;&#10;3) use the mouse to set the focus back in the urlbar&#10;4) again, tab out of urlbar to first link, and tab again to first &lt;select&gt;&#10;5) at this point, wait. In a few seconds, CPU will go to 100%&#10;&#10;The stack trace for the loop is below, and it is stuck in the 'do {} while ();'&#10;of MoveFocusToCaret, which starts at about line 4332 of nsEventStateManager.cpp&#10;&#10;Tested with win2k, cvs build pulled ~4pm 03/18&#10;&#10;-&gt; aaronl, since cvsblame has him as the author of that loop.&#10;&#10;nsEventStateManager::MoveFocusToCaret(nsEventStateManager * const 0x0158d9ce,&#10;int 0x00000000, int * 0x00000000) line 4332&#10;nsEventStateManager::ShiftFocusInternal(nsEventStateManager * const 0x00000013,&#10;int 0x0158d810, nsIContent * 0x00000001) line 2776&#10;nsEventStateManager::ShiftFocus(nsEventStateManager * const 0x025498c8, int&#10;0x00000001, nsIContent * 0x00000000) line 2706&#10;nsEventStateManager::PostHandleEvent(nsEventStateManager * const 0x01cdc2ae,&#10;nsIPresContext * 0x025498c8, nsEvent * 0x02534a58, nsIFrame * 0x0012fb44,&#10;nsEventStatus * 0x0259f5ec, nsIView * 0x0012fa14) line 1830&#10;PresShell::HandleEventInternal(PresShell * const 0x00000013, nsEvent *&#10;0x01cdc04c, nsIView * 0x025498c8, unsigned int 0x025a04d8, nsEventStatus *&#10;0x00000001) line 6074 + 25 bytes&#10;PresShell::HandleEvent(PresShell * const 0x01e392a3, nsIView * 0x025498c8,&#10;nsGUIEvent * 0x025a04d8, nsEventStatus * 0x0012fb44, int 0x0012fa14, int &amp;) line&#10;5977 + 24 bytes&#10;nsViewManager::HandleEvent(nsViewManager * const 0x00000013, nsView *&#10;0x01e313c4, nsGUIEvent * 0x02567cc8, int 0x0012fb44) line 2043&#10;nsView::HandleEvent(nsView * const 0x00000013, nsViewManager * 0x01c4d6f8,&#10;nsGUIEvent * 0x0012fb44, int 0x00000000) line 306&#10;nsViewManager::DispatchEvent(nsViewManager * const 0x01e31f2d, nsGUIEvent *&#10;0x01c4d6f8, nsEventStatus * 0x3d888889) line 1857 + 29 bytes&#10;HandleEvent(nsGUIEvent * 0x0012fb44) line 83&#10;nsWindow::DispatchEvent(nsWindow * const 0x02567d3c, nsGUIEvent * 0x0012fb44,&#10;nsEventStatus &amp; nsEventStatus_eIgnore) line 865 + 3 bytes&#10;nsWindow::DispatchWindowEvent(nsWindow * const 0x00000013, nsGUIEvent *&#10;0x00000000) line 886&#10;nsWindow::DispatchKeyEvent(nsWindow * const 0x00000013, unsigned int 0x00000083,&#10;unsigned short 0x0000, unsigned int 0x00000009, long 0x00000000) line 2659 + 32&#10;bytes&#10;nsWindow::OnChar(nsWindow * const 0x00000013, unsigned int 0x00000009, unsigned&#10;int 0x00000009, unsigned char 0x00) line 2807 + 20 bytes&#10;nsWindow::ProcessMessage(nsWindow * const 0x00000013, unsigned int 0x018a2575,&#10;unsigned int 0x00000102, long 0x00000009, long * 0x000f0001) line 4167 + 16 bytes&#10;nsWindow::WindowProc(HWND__ * 0x77e13eb0, unsigned int 0x00db03c2, unsigned int&#10;0x00000000, long 0x00000009) line 1130 + 15 bytes&#10;USER32! 77e13eb0()&#10;nsAppShellService::Run(nsAppShellService * const 0x00f50110) line 309&#10;main1(int 0x004020de, char * * 0x00000001, nsISupports * 0x00312c30) line 1350 +&#10;10 bytes&#10;main(int 0x00000000, char * * 0x00313bb8) line 1698 + 23 bytes&#10;WinMain(HINSTANCE__ * 0x00400000, HINSTANCE__ * 0x00400000, char * 0x001333fb,&#10;HINSTANCE__ * 0x00400000) line 1716 + 23 bytes&#10;MOZILLA! WinMainCRTStartup + 308 bytes"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Hsin-Yi Tsai [:hsinyi]"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Infinite loop in ns"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/User events and focus handling&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
+  <rdf:Description rdf:about="Bug 166340">
+    <ns1:isBugname>type ahead find on full text won't find some characters</ns1:isBugname>
+    <ns1:isReporter>Tuukka Tolvanen (sp3000)</ns1:isReporter>
+    <ns1:isComponent>Find In Page</ns1:isComponent>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isDescription>User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.1b) Gecko/20020902
+Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.1b) Gecko/20020902
+
+For me typeaheadfind won't find any of (at least) abgiloruz1 as the first
+character, in full search mode.
+
+see</ns1:isDescription>
+    <ns1:ModifiedTime>11 years ago</ns1:ModifiedTime>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 905683">
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Kadir Topal [:atopal]"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/To integrate Optimizely with GA it needs to be loaded before GA, see documentation: "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Kadir Topal [:atopal]"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/support.mozilla.org&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Move Optimizely snippet up, to load before GA"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/6 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Roland Tanglao needinfo please :rolandtanglao, :mohnkuchen, :adobo, :sinigang, :roland"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/6 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Knowledge Base Software&#10;          "/>
+  <rdf:Description rdf:about="Bug 1306942">
+    <ns1:isComponent>Inspector</ns1:isComponent>
+    <ns1:ModifiedTime>10 months ago</ns1:ModifiedTime>
+    <ns1:isDescription>User Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0
+Build ID: 20161001030430
+
+Steps to reproduce:
+
+1. Start Nightly in RTL locales
+2. Open DevTools &gt; Inspector
+3. Resize inspector sidebar until displaying all-tabs-menu
+
+
+Actual results:
+
+all-tabs-menu position is the start side.
+
+Regression range:</ns1:isDescription>
+    <ns1:isAssignee>[:Towkir] Ahmed</ns1:isAssignee>
+    <ns1:isProduct>DevTools</ns1:isProduct>
+    <ns1:isReporter>magicp</ns1:isReporter>
+    <ns1:isTriageOwner>Gabriel [:gl] (ΦωΦ)</ns1:isTriageOwner>
+    <ns1:isBugname>Fix all-tabs-menu position in RTL locales</ns1:isBugname>
+    <ns1:ReportedTime>3 years ago</ns1:ReportedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 152370">
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/dsirnapalli"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/menulist and listbox not reporting correct accessible value"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Disability Access APIs&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Marco Zehe (:MarcoZ) [Out sick until further notice, NI and reviews will not be answered]"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/-- Testcase attached.&#10;Summary describes the bug."/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
+  <rdf:Description rdf:about="Bug 121114">
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isTriageOwner>Hsin-Yi Tsai [:hsinyi]</ns1:isTriageOwner>
+    <ns1:isComponent>User events and focus handling</ns1:isComponent>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:ModifiedTime>a month ago</ns1:ModifiedTime>
+    <ns1:isBugname>No keyboard access to links in Element Properties window</ns1:isBugname>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isDescription>I cannot use the keyboard to focus on links in the element properties window.
+
+This window is where accessibility information is often exposed - for example,
+the links provided in the longdesc attribute on images and frames. So, we're
+exposing the accessibility information visually, but now allowing the keyboard
+users access to it.
+
+I'll take a look and see if I can fix it first.</ns1:isDescription>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 164295">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Find In Page&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/11 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/[typeaheadfind] Linker Error with  Sun Forte Compile against gkgfx"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/This is the same problem that occured in "/>
+  <rdf:Description rdf:about="Bug 164295">
+    <ns1:isBugname>[typeaheadfind] Linker Error with  Sun Forte Compile against gkgfx</ns1:isBugname>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isComponent>Find In Page</ns1:isComponent>
+    <ns1:isDescription>This is the same problem that occured in</ns1:isDescription>
+    <ns1:ModifiedTime>11 years ago</ns1:ModifiedTime>
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 130447">
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/A. Craig West"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/11 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Kyle Machulis [:qdot] [:kmachulis]"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Document Navigation&#10;          "/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Clicking on anchor goes to top of page, entering the URL directly doesn't"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/If you go to the above URL, which is to an anchor in the Java documentation, the&#10;browser brings up the page scrolled to the anchor correctly. If you click on the&#10;link to the same anchor on the page the browser scrolls to the top of the page,&#10;instead. The link to the anchor can be found in the 'Method Index' section, it&#10;is the last link in that section.&#10;This applies to all links in the Java documentation, at least."/>
+  <rdf:Description rdf:about="Bug 710407">
+    <ns1:isBugname>Define and document Android Sync behavior if multiple Firefox versions (e</ns1:isBugname>
+    <ns1:ModifiedTime>2 years ago</ns1:ModifiedTime>
+    <ns1:isReporter>Allison Naaktgeboren :ally</ns1:isReporter>
+    <ns1:isComponent>Android Sync</ns1:isComponent>
+    <ns1:isTriageOwner>:Grisha Kruglov</ns1:isTriageOwner>
+    <ns1:isDescription>Sync's behavior on android is undefined if more than one version of firefox is installed. What, if any, should the behavior be, and is the desired behavior even technically feasible?</ns1:isDescription>
+    <ns1:isProduct>Firefox for Android</ns1:isProduct>
+    <ns1:ReportedTime>7 years ago</ns1:ReportedTime>
+    <ns1:isAssignee>Allison Naaktgeboren :ally</ns1:isAssignee>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 121114">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a month ago"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/No keyboard access to links in Element Properties window"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/User events and focus handling&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Hsin-Yi Tsai [:hsinyi]"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/I cannot use the keyboard to focus on links in the element properties window.&#10;&#10;This window is where accessibility information is often exposed - for example,&#10;the links provided in the longdesc attribute on images and frames. So, we're&#10;exposing the accessibility information visually, but now allowing the keyboard&#10;users access to it.&#10;&#10;I'll take a look and see if I can fix it first."/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
+  <rdf:Description rdf:about="Bug 1471243">
+    <ns1:isReporter>Ciprian Muresan [:cmuresan], Experiments QA</ns1:isReporter>
+    <ns1:ReportedTime>10 months ago</ns1:ReportedTime>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isBugname>The New Tab Page is briefly displayed before the about:welcome page when a new Beta profile is opened</ns1:isBugname>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:ModifiedTime>8 months ago</ns1:ModifiedTime>
+    <ns1:isDescription>[Affected versions]:
+- Firefox Beta v62.0b3, Build ID 20180625141512
+
+[Affected Platforms]:
+- All Windows
+- All Mac
+- All Linux
+
+[Steps to reproduce]:
+1. Create a new Firefox profile.
+2. Start the browser with the new profile and observe the behavior.
+
+[Expected results]:
+- The "about:welcome" page is displayed as soon as the browser starts.
+
+[Actual results]:
+- The "about:newtab" page is briefly displayed before the "about:welcome" one.
+
+[Notes]:
+- The issue is not reproducible on slower machines.
+- This issue is not reproducible on Nightly because the about:welcome page is not set as the first run page.
+- Attached a screen recording of the issue:</ns1:isDescription>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 102679">
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Hsin-Yi Tsai [:hsinyi]"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/TucsonTester2"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a month ago"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Build ID: 20011001&#10;&#10;Composer looses focus after deleting a linked image.&#10;&#10;Reproducible: Always&#10;&#10;Steps to Reproduce:&#10;1.Open Composer&#10;2.Insert an image using the image button on the toolbar&#10;3.Highlight the image and click the link button on the toolbar then create a&#10;link and click ok&#10;4.Click the image and delete it&#10;5.Type some text&#10;&#10;Actual Results:&#10;The text does not type because the composer window has lost focus.  In order to&#10;type again you need to click in the window.&#10;&#10;Expected Results:&#10;I would expect that composer would maintain it's focus after deleting a linked&#10;image."/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Composer loses focus after deleting a linked image"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/User events and focus handling&#10;          "/>
+  <rdf:Description rdf:about="Bug 165665">
+    <ns1:isDescription>Hmm ... dumb mistake. My last performance enhancement for typeaheadfind
+regressed it so that it would shut off when a new page was loaded in the same
+window. Duh.
+
+Well, the coming patch fixes that, and implements bz's suggestions for improving
+typing performance.</ns1:isDescription>
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isBugname>Typeaheadfind not active after set new doc</ns1:isBugname>
+    <ns1:ModifiedTime>11 years ago</ns1:ModifiedTime>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isComponent>Find In Page</ns1:isComponent>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 165665">
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Typeaheadfind not active after set new doc"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Find In Page&#10;          "/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Hmm ... dumb mistake. My last performance enhancement for typeaheadfind&#10;regressed it so that it would shut off when a new page was loaded in the same&#10;window. Duh.&#10;&#10;Well, the coming patch fixes that, and implements bz's suggestions for improving&#10;typing performance."/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/11 years ago"/>
+  <rdf:Description rdf:about="Bug 131089">
+    <ns1:isDescription>A topcrash with the stack below started appearing in 2002-03-10-11 builds.  I
+assume it was caused by the checkin:
+
+date: 2002/03/10 06:21:38;  author: aaronl%netscape.com;  state: Exp;  lines:
++471 -215
+Fixes</ns1:isDescription>
+    <ns1:ModifiedTime>17 years ago</ns1:ModifiedTime>
+    <ns1:isTriageOwner>Neil Deakin</ns1:isTriageOwner>
+    <ns1:isBugname>crashes [@ ns</ns1:isBugname>
+    <ns1:isComponent>XUL</ns1:isComponent>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isReporter>David Baron :dbaron: 🏴󠁵󠁳󠁣󠁡󠁿 ⌚UTC-7</ns1:isReporter>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isProduct>Core</ns1:isProduct>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 132154">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/John Gaunt (redfive)"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/XUL&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Neil Deakin"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/No focus ring on individual areas of Image maps"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/There used ( 6.2.1 ) to be a subtly dotted ring around an area of an image map&#10;when you tabbed through the areas. I don't see this anymore. In a simplified&#10;test I see during tabbing:  URLbar -&gt; document -&gt; Entire image map -&gt; URLbar etc...&#10;&#10;I'll attach the simple testcase i developed."/>
+  <rdf:Description rdf:about="Bug 1476594">
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:isReporter>Andrei Oprea [:andreio]</ns1:isReporter>
+    <ns1:isBugname>Homepage pref list options don't update when selected</ns1:isBugname>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:isDescription>In about:preferences#home make sure you have the first option selected for the Homepage pref.
+Switch to Blank page (#3rd option) and try switching back to first. Notice how switching to the first option requires you to select it a second time around for it to update.</ns1:isDescription>
+    <ns1:ModifiedTime>6 months ago</ns1:ModifiedTime>
+    <ns1:ReportedTime>9 months ago</ns1:ReportedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1393507">
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Virtual_ManPL [:Virtual] - (please needinfo? me - so I will see your comment/reply/question/etc.)"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isBugname rdf:resource='http://www.bugzilla.com/"Bookmarks Toolbar Items" icon in Bookmarks Toolbar in "Customize'/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Toolbars and Customization&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/New &quot;Bookmarks Toolbar Items&quot; icon in Bookmarks Toolbar in &quot;Customize...&quot; mode is too dark after&#10;&#10;STR:&#10;1. Open &quot;Customize...&quot; mode&#10;2. Look on far left in Bookmarks Toolbar on &quot;Bookmarks Toolbar Items&quot; icon&#10;and see that it's full black, instead of grey, which makes it inconsistent with other icons in Location Bar in Bookmarks Bar&#10;&#10;Caused by:&#10;"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/:Gijs (he/him)"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a year ago"/>
+  <rdf:Description rdf:about="Bug 131918">
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isTriageOwner>Hsin-Yi Tsai [:hsinyi]</ns1:isTriageOwner>
+    <ns1:isBugname>Infinite loop in ns</ns1:isBugname>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ModifiedTime>a month ago</ns1:ModifiedTime>
+    <ns1:isReporter>John Morrison</ns1:isReporter>
+    <ns1:isDescription><![CDATA[Infinite loop in nsEventStateManager::MoveFocusToCaret, tabbing to form controls
+
+Somehow, I've hit an infinite loop while doing some testing of form controls.
+
+(NOTE: this happens with either the current (c++) implementation of form controls
+or with the xbl-based form controls. It is independent of [XBLFC].)
+
+Steps to reproduce:
+1) start browser and load the first attachment to this bug (simple form)
+2) tab out of urlbar to first link, and tab again to first <select>
+3) use the mouse to set the focus back in the urlbar
+4) again, tab out of urlbar to first link, and tab again to first <select>
+5) at this point, wait. In a few seconds, CPU will go to 100%
+
+The stack trace for the loop is below, and it is stuck in the 'do {} while ();'
+of MoveFocusToCaret, which starts at about line 4332 of nsEventStateManager.cpp
+
+Tested with win2k, cvs build pulled ~4pm 03/18
+
+-> aaronl, since cvsblame has him as the author of that loop.
+
+nsEventStateManager::MoveFocusToCaret(nsEventStateManager * const 0x0158d9ce,
+int 0x00000000, int * 0x00000000) line 4332
+nsEventStateManager::ShiftFocusInternal(nsEventStateManager * const 0x00000013,
+int 0x0158d810, nsIContent * 0x00000001) line 2776
+nsEventStateManager::ShiftFocus(nsEventStateManager * const 0x025498c8, int
+0x00000001, nsIContent * 0x00000000) line 2706
+nsEventStateManager::PostHandleEvent(nsEventStateManager * const 0x01cdc2ae,
+nsIPresContext * 0x025498c8, nsEvent * 0x02534a58, nsIFrame * 0x0012fb44,
+nsEventStatus * 0x0259f5ec, nsIView * 0x0012fa14) line 1830
+PresShell::HandleEventInternal(PresShell * const 0x00000013, nsEvent *
+0x01cdc04c, nsIView * 0x025498c8, unsigned int 0x025a04d8, nsEventStatus *
+0x00000001) line 6074 + 25 bytes
+PresShell::HandleEvent(PresShell * const 0x01e392a3, nsIView * 0x025498c8,
+nsGUIEvent * 0x025a04d8, nsEventStatus * 0x0012fb44, int 0x0012fa14, int &) line
+5977 + 24 bytes
+nsViewManager::HandleEvent(nsViewManager * const 0x00000013, nsView *
+0x01e313c4, nsGUIEvent * 0x02567cc8, int 0x0012fb44) line 2043
+nsView::HandleEvent(nsView * const 0x00000013, nsViewManager * 0x01c4d6f8,
+nsGUIEvent * 0x0012fb44, int 0x00000000) line 306
+nsViewManager::DispatchEvent(nsViewManager * const 0x01e31f2d, nsGUIEvent *
+0x01c4d6f8, nsEventStatus * 0x3d888889) line 1857 + 29 bytes
+HandleEvent(nsGUIEvent * 0x0012fb44) line 83
+nsWindow::DispatchEvent(nsWindow * const 0x02567d3c, nsGUIEvent * 0x0012fb44,
+nsEventStatus & nsEventStatus_eIgnore) line 865 + 3 bytes
+nsWindow::DispatchWindowEvent(nsWindow * const 0x00000013, nsGUIEvent *
+0x00000000) line 886
+nsWindow::DispatchKeyEvent(nsWindow * const 0x00000013, unsigned int 0x00000083,
+unsigned short 0x0000, unsigned int 0x00000009, long 0x00000000) line 2659 + 32
+bytes
+nsWindow::OnChar(nsWindow * const 0x00000013, unsigned int 0x00000009, unsigned
+int 0x00000009, unsigned char 0x00) line 2807 + 20 bytes
+nsWindow::ProcessMessage(nsWindow * const 0x00000013, unsigned int 0x018a2575,
+unsigned int 0x00000102, long 0x00000009, long * 0x000f0001) line 4167 + 16 bytes
+nsWindow::WindowProc(HWND__ * 0x77e13eb0, unsigned int 0x00db03c2, unsigned int
+0x00000000, long 0x00000009) line 1130 + 15 bytes
+USER32! 77e13eb0()
+nsAppShellService::Run(nsAppShellService * const 0x00f50110) line 309
+main1(int 0x004020de, char * * 0x00000001, nsISupports * 0x00312c30) line 1350 +
+10 bytes
+main(int 0x00000000, char * * 0x00313bb8) line 1698 + 23 bytes
+WinMain(HINSTANCE__ * 0x00400000, HINSTANCE__ * 0x00400000, char * 0x001333fb,
+HINSTANCE__ * 0x00400000) line 1716 + 23 bytes
+MOZILLA! WinMainCRTStartup + 308 bytes]]></ns1:isDescription>
+    <ns1:isComponent>User events and focus handling</ns1:isComponent>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 75609">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/The current build system uses a default WINVER of 0x0400.&#10;This gives us the lowest common denominator of Windows support.&#10;However it does not define some things we need to support MSAA (Microsoft &#10;Active Accessibility), such as OBJID_WINDOW and WM_GETOBJECT.&#10;&#10;Is there any reason we can't use WINVER=0x0500 as the default now?&#10;&#10;I notice that in some modules, people are forcing WINVER = 0x0500 temporarily &#10;before they include certain files."/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Build Config&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Cannot use Windows MSAA support with WINVER=0x0400"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/15 years ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
+  <rdf:Description rdf:about="Bug 118858">
+    <ns1:isComponent>General</ns1:isComponent>
+    <ns1:isBugname>Active Accessibility: ns</ns1:isBugname>
+    <ns1:isReporter>dsirnapalli</ns1:isReporter>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:ModifiedTime>15 years ago</ns1:ModifiedTime>
+    <ns1:isDescription><![CDATA[here is the simple test case.
+-----------
+<html>
+<title> nsIAccessible Interface Test Case </title>
+<body>
+<b> Simple text which is not focusable </b>
+
+<br><br>
+<button value="submit"> Submit </button>
+
+</body>
+</html>
+---------------------------
+Open the above test case in Mozilla or mfcEmbed. Run mozInspect, click on "show 
+highlight rectangle" and move the cursor over to the text "Simple text which is 
+not focusable".Watch the value of state.It shows
+"read only,focusable,selectable". It should not show focusable since text is 
+not focusable. IE shows "read only,selectable".]]></ns1:isDescription>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 133304">
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Michael Baffoni"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Hsin-Yi Tsai [:hsinyi]"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Selection&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/No blinking caret in mail body"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/When I compose a new message, I type in an address, hit tab, type in a subject,&#10;hit tab.  I expect to see the blinking cursor now displayed in the body of the&#10;message, but there is no cursor to be seen anywhere.  If I start typing, the&#10;text I typed appears where you would expect it at the top of the composition&#10;window, and so does the cursor, but until I type, the cursor is lost.&#10;&#10;I have seen similar problem typing into form windows in the browser, but I can't&#10;replicate the behaviour as reliably as in the mail composition window.&#10;&#10;Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:0.9.9+) Gecko/20020325"/>
+  <rdf:Description rdf:about="Bug 165632">
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isComponent>Find In Page</ns1:isComponent>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:ModifiedTime>11 years ago</ns1:ModifiedTime>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:isDescription>I have all the MozillaBuildList.pl changes, I think.
+I still need to generate the .xml build files.
+
+Unfortunately, I'm having a lot of bad luck getting Mozilla to build on my Mac
+at all. Tried pulling a fresh tree, getting CodeWarrior 7.2, but still no luck.
+So I can't move forward on this at the moment.</ns1:isDescription>
+    <ns1:isBugname>Get typeaheadfind building on mac</ns1:isBugname>
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1480508">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/8 months ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Add Top Site Search Shortcuts automatically for new and existing users"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Kate Hudson :k88hudson"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/We would like to automatically add a Top Site Search Shortcut to users' for existing users if they have an open (i.e. unpinned) tile available and the host name (google, amazon) is found in their top sites.&#10;&#10;Note that we should store some kind of state in persistent storage when we do this so that we do not add a second time if it is removed/edited/replaced."/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/8 months ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
+  <rdf:Description rdf:about="Bug 132154">
+    <ns1:isTriageOwner>Neil Deakin</ns1:isTriageOwner>
+    <ns1:isReporter>John Gaunt (redfive)</ns1:isReporter>
+    <ns1:isComponent>XUL</ns1:isComponent>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isDescription>There used ( 6.2.1 ) to be a subtly dotted ring around an area of an image map
+when you tabbed through the areas. I don't see this anymore. In a simplified
+test I see during tabbing:  URLbar -&gt; document -&gt; Entire image map -&gt; URLbar etc...
+
+I'll attach the simple testcase i developed.</ns1:isDescription>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isBugname>No focus ring on individual areas of Image maps</ns1:isBugname>
+    <ns1:ModifiedTime>17 years ago</ns1:ModifiedTime>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1476594">
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Homepage pref list options don't update when selected"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/6 months ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Andrei Oprea [:andreio]"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/In about:preferences#home make sure you have the first option selected for the Homepage pref.&#10;Switch to Blank page (#3rd option) and try switching back to first. Notice how switching to the first option requires you to select it a second time around for it to update."/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/9 months ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
+  <rdf:Description rdf:about="Bug 152370">
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isReporter>dsirnapalli</ns1:isReporter>
+    <ns1:ModifiedTime>17 years ago</ns1:ModifiedTime>
+    <ns1:isTriageOwner>James Teh [:Jamie]</ns1:isTriageOwner>
+    <ns1:isComponent>Disability Access APIs</ns1:isComponent>
+    <ns1:isBugname>menulist and listbox not reporting correct accessible value</ns1:isBugname>
+    <ns1:isDescription>-- Testcase attached.
+Summary describes the bug.</ns1:isDescription>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 125295">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/General&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Active Accessibility: Html &lt;button&gt; Element should not have any children"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/dsirnapalli"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Below it the test case:&#10;-----------------------------------------&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;script type=&quot;text/javascript&quot;&gt;&#10;&#10;function getAccessibleNode(startNode)&#10;{&#10;  var accessibleService = null;&#10;  var accessibleNode = null;&#10;  try{&#10;   netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalBrowserRead&quot;);&#10;   netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalXPConnect&quot;);&#10;&#10;   accessibleService = Components.classes&#10;[&quot;@mozilla.org/accessibilityService;1&quot;].createInstance();&#10;   accessibleService = accessibleService.QueryInterface&#10;(Components.interfaces.nsIAccessibilityService);&#10;  }&#10;  catch(e){&#10;   alert(&quot;Error getting accessibility service&quot;);&#10;  }&#10;&#10;  try{&#10;   netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalBrowserRead&quot;);&#10;   netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalXPConnect&quot;);&#10;&#10;   accessibleNode = accessibleService.getAccessibleFor(startNode);&#10;&#10;   return accessibleNode;&#10;  }&#10;  catch(e){&#10;   return &quot;Exception&quot;;&#10;  }&#10;}&#10;&#10;function getValue()&#10;{&#10;  try{&#10;   return accNode.accValue;&#10;  }&#10;  catch(e){&#10;    return(e);&#10;  }&#10;}&#10;&#10;function executeTestCase()&#10;{&#10; try{&#10;  netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalBrowserRead&quot;);&#10;  netscape.security.PrivilegeManager.enablePrivilege(&quot;UniversalXPConnect&quot;);&#10;&#10;  var node = document.getElementsByTagName(&quot;button&quot;).item(0);&#10;  node = node.firstChild;&#10;  accNode = getAccessibleNode(node);&#10;  var value = getValue();&#10;  var newvalue = value.toString();&#10;alert(&quot;Value: &quot; + newvalue);&#10;&#10; }&#10; catch(e){&#10;  alert(&quot;Exception: &quot; + e);&#10; }&#10;}&#10;&#10;&lt;/script&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;&#10;&lt;script type=&quot;text/javascript&quot;&gt;&#10;&#10;&lt;!-- Test Button --&gt;&#10;document.write('&lt;br&gt;');&#10;document.write('&lt;b&gt;Testing Button for Accessibility..&lt;/b&gt;&lt;br&gt;&lt;br&gt;');&#10;document.write('&lt;button value=&quot;submit&quot;&gt;Submit&lt;/button&gt;');&#10;&#10;setTimeout(&quot;executeTestCase();&quot;, 2000);&#10;&#10;&lt;/script&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;------------------------------------------------------------&#10;When you execute the test case in Mozilla or MfcEmbed the alert shows &#10;&#10;Value: [Exception... &quot;Component returned failure code: 0x80004005 (NS_ERROR_FAIL&#10;URE) [nsIAccessible.accValue]&quot;  nsresult: &quot;0x80004005 (NS_ERROR_FAILURE)&quot;  locat&#10;ion: &quot;JS frame :: file:///C:/Netscape/Accessibility/bug.html :: getValue :: line&#10; 36&quot;  data: no]&#10;Actually it should show NS_ERROR_NOT_IMPLEMENTED if the functionality is not &#10;implemented."/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/15 years ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
+  <rdf:Description rdf:about="Bug 125295">
+    <ns1:ModifiedTime>15 years ago</ns1:ModifiedTime>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isReporter>dsirnapalli</ns1:isReporter>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:isDescription><![CDATA[Below it the test case:
+-----------------------------------------
+<html>
+<head>
+<script type="text/javascript">
+
+function getAccessibleNode(startNode)
+{
+  var accessibleService = null;
+  var accessibleNode = null;
+  try{
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+   accessibleService = Components.classes
+["@mozilla.org/accessibilityService;1"].createInstance();
+   accessibleService = accessibleService.QueryInterface
+(Components.interfaces.nsIAccessibilityService);
+  }
+  catch(e){
+   alert("Error getting accessibility service");
+  }
+
+  try{
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+   accessibleNode = accessibleService.getAccessibleFor(startNode);
+
+   return accessibleNode;
+  }
+  catch(e){
+   return "Exception";
+  }
+}
+
+function getValue()
+{
+  try{
+   return accNode.accValue;
+  }
+  catch(e){
+    return(e);
+  }
+}
+
+function executeTestCase()
+{
+ try{
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+  var node = document.getElementsByTagName("button").item(0);
+  node = node.firstChild;
+  accNode = getAccessibleNode(node);
+  var value = getValue();
+  var newvalue = value.toString();
+alert("Value: " + newvalue);
+
+ }
+ catch(e){
+  alert("Exception: " + e);
+ }
+}
+
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+<!-- Test Button -->
+document.write('<br>');
+document.write('<b>Testing Button for Accessibility..</b><br><br>');
+document.write('<button value="submit">Submit</button>');
+
+setTimeout("executeTestCase();", 2000);
+
+</script>
+</body>
+</html>
+------------------------------------------------------------
+When you execute the test case in Mozilla or MfcEmbed the alert shows 
+
+Value: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAIL
+URE) [nsIAccessible.accValue]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  locat
+ion: "JS frame :: file:///C:/Netscape/Accessibility/bug.html :: getValue :: line
+ 36"  data: no]
+Actually it should show NS_ERROR_NOT_IMPLEMENTED if the functionality is not 
+implemented.]]></ns1:isDescription>
+    <ns1:isBugname><![CDATA[Active Accessibility: Html <button> Element should not have any children]]></ns1:isBugname>
+    <ns1:isComponent>General</ns1:isComponent>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1363028">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Johann Hofmann [:johannh]"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Dão Gottwald [::dao]"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/For Photon we want new set of bookmark toolbar buttons, see "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Update bookmark toolbar icons"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Theme&#10;          "/>
+  <rdf:Description rdf:about="Bug 1361695">
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isBugname>Add illustration to about:license</ns1:isBugname>
+    <ns1:ModifiedTime>10 days ago</ns1:ModifiedTime>
+    <ns1:isComponent>General</ns1:isComponent>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isDescription>mockup:</ns1:isDescription>
+    <ns1:isReporter>Dão Gottwald [::dao]</ns1:isReporter>
+    <ns1:isTriageOwner>Justin Dolske [:Dolske]</ns1:isTriageOwner>
+    <ns1:isAssignee>[:Towkir] Ahmed</ns1:isAssignee>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1471391">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Kate Hudson :k88hudson"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/6 months ago"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/10 months ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Create CFR doorhanger UI template"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/We need to create a UI template that can communicate with AS Router via actions like the existing ASR templates. It should also implement telemetry and impression collection in a similar way.&#10;&#10;Note that this may need to be broken down into more bugs to handle separate aspects of the UI."/>
+  <rdf:Description rdf:about="Bug 166033">
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:ModifiedTime>11 years ago</ns1:ModifiedTime>
+    <ns1:isBugname>Keyboard menu navigation (access keys) not working due to perf 'improvement' for typeaheadfind</ns1:isBugname>
+    <ns1:isComponent>Find In Page</ns1:isComponent>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isDescription>win32 trunk build 2002083108, win98se
+
+When the keyboard is used to access menu items, the initial keyboard shortcut
+does drop down the menu, but typing the letter for a particular menu item
+initiates a "find in page" for that letter instead of initiating the menu item.
+ Happens with a new profile or an existing one.
+
+Steps to reproduce:
+1. Create a new profile and start the browser (should go to default home page</ns1:isDescription>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isReporter>K Chayka</ns1:isReporter>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 111284">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/General&#10;          "/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/dsirnapalli"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Active Accessibility: acc"/>
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/Below is the shortened version of test case.&#10;----------------------&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;script type="text/javascript"&gt;&#10;&#10;function getAccessibleNode(startNode)&#10;{&#10;  var accessibleService = null;&#10;  var accessibleNode = null;&#10;  try{&#10;   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");&#10;   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");&#10;&#10;   accessibleService = &#10;Components.classes["@mozilla.org/accessibilityService;1"].createInstance();&#10;   accessibleService = &#10;accessibleService.QueryInterface(Components.interfaces.nsIAccessibilityService);&#10;  }&#10;  catch(e){&#10;   alert("Error getting accessibility service");&#10;  }&#10;&#10;  try{&#10;   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");&#10;   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");&#10;&#10;   accessibleNode = accessibleService.getAccessibleFor(startNode);&#10;   return accessibleNode;&#10;  }&#10;  catch(e){&#10;   return "Exception";&#10;  }&#10;}&#10;&#10;function getDomNodeTable()&#10;{&#10; try{&#10;  netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");&#10;  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");&#10;&#10;  var node = document.getElementsByTagName("table").item(0);&#10;  return node;&#10; }&#10; catch(e){&#10;  alert("Exception: " + e);&#10; }&#10;}&#10;&#10;&lt;/script&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;&#10;&lt;center&gt;&#10;&lt;table border cols=2 width="50%"&gt;&#10;&lt;caption&gt;Test Table&lt;/caption&gt;&#10; &lt;tr&gt;&#10;  &lt;td&gt; Row1,Col1&lt;/td&gt;&#10;  &lt;td&gt; Row1,Col2&lt;/td&gt;&#10; &lt;/tr&gt;&#10; &lt;tr&gt;&#10;  &lt;td&gt; Row2,Col1&lt;/td&gt;&#10;  &lt;td&gt; Row2,Col2&lt;/td&gt;&#10; &lt;/tr&gt;&#10; &lt;tr&gt;&#10;  &lt;td&gt; Row3,Col1&lt;/td&gt;&#10;  &lt;td&gt; Row3,Col2&lt;/td&gt;&#10; &lt;/tr&gt;&#10;&lt;/table&gt;&#10;&lt;/center&gt;&#10;&#10;&lt;script type="text/javascript"&gt;&#10;try{&#10;  netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");&#10;  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");&#10;&#10;  var domNode = getDomNodeTable();&#10;  alert("domNode: " + domNode);&#10;  var accNode = getAccessibleNode(domNode);&#10;  alert("accNode: " + accNode);&#10;&#10;  var name = accNode.accName;&#10;  alert("Name: " + name);&#10;}&#10;catch(e){&#10;  alert("Exception: " + e);&#10;}&#10;&lt;/script&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;----------------------&#10;I am displaying the HTML table first, and using dom api i am getting the dom &#10;node for table. after getting the dom node for table i am checking for wheather &#10;that dom node is accessible or not.in this case the dom node is accessible.&#10;1.When i run this test case from mozilla  accNode.accName returns null.&#10;2.When i run this test case from mozilla and open mozInspect and check the &#10;table node mozInspect shows null.that is fine but&#10;3.When i run this test case from IE and open mozInspect and check the table node &#10;mozInspect returns "Test Table". It picks up the caption text for accName.&#10;I know the test case doesnot run properly from IE but i wanted to display table &#10;so that i can use to test using mozInspect.'/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/14 years ago"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
+  <rdf:Description rdf:about="Bug 1472642">
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:isDescription>[Affected versions]:
+- Nightly 63.0a1 Build ID 20180701220749
+
+[Affected Platforms]:
+- All Windows
+- All Mac
+- All Linux
+
+[Steps to reproduce]:
+1. Open the Browser and navigate to the about:welcome page.
+2. Click the "Continue" button and observe the behavior.
+
+[Expected results]:
+- The "Email" field is focused.
+
+[Actual results]:
+- The "Email" field is highlighted with red and the "Valid email required" message appears in a red bubble towards the top of the page, but the field is not focused.
+
+[Notes]:
+- Attached a screen recording of the issue.</ns1:isDescription>
+    <ns1:isBugname>The empty "Email" field is not focused when the "Continue" button is clicked on about:welcome</ns1:isBugname>
+    <ns1:ModifiedTime>9 months ago</ns1:ModifiedTime>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:ReportedTime>10 months ago</ns1:ReportedTime>
+    <ns1:isReporter>Ciprian Muresan [:cmuresan], Experiments QA</ns1:isReporter>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1487118">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/7 months ago"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Cleanup CFR recommendations when the experiment/ASRouter gets disabled"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/8 months ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
+  <rdf:Description rdf:about="Bug 103903">
+    <ns1:isComponent>DOM: Core &amp; HTML</ns1:isComponent>
+    <ns1:isDescription><![CDATA[When inspecting a window object in the js debugger, nsHTMLImageAccessible.cpp
+causes a crash.
+
+Index: nsHTMLImageAccessible.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/accessible/src/nsHTMLImageAccessible.cpp,v
+retrieving revision 1.11
+diff -u -r1.11 nsHTMLImageAccessible.cpp
+--- nsHTMLImageAccessible.cpp	2001/09/25 22:32:27	1.11
++++ nsHTMLImageAccessible.cpp	2001/10/09 19:37:27
+@@ -58,7 +58,8 @@
+   nsCOMPtr<nsIDOMElement> element(do_QueryInterface(aDOMNode));
+   nsCOMPtr<nsIDocument> doc;
+   nsCOMPtr<nsIPresShell> shell(do_QueryReferent(mPresShell));
+-  NS_ASSERTION(shell,"Shell is gone!!! What are we doing here?");
++  if (NS_WARN_IF_FALSE(shell,"Shell is gone!!! What are we doing here?"))
++    return;
+ 
+   shell->GetDocument(getter_AddRefs(doc));
+   nsAutoString mapElementName;
+
+Top of stack looked like this...
+(gdb) where
+#0  0x42571aa4 in nsHTMLImageAccessible::nsHTMLImageAccessible (
+    this=0x8b9ab70, aDOMNode=0x8ba8e30, aShell=0x0)
+    at nsHTMLImageAccessible.cpp:63
+#1  0x425690bf in nsAccessibilityService::CreateXULImageAccessible (
+    this=0x8db51f0, aNode=0x8ba8e30, _retval=0xbfff955c)
+    at nsAccessibilityService.cpp:351
+#2  0x401e9300 in XPTC_InvokeByIndex (that=0x8db51f0, methodIndex=15, 
+    paramCount=2, params=0xbfff954c) at xptcinvoke_unixish_x86.cpp:153]]></ns1:isDescription>
+    <ns1:isTriageOwner>Hsin-Yi Tsai [:hsinyi]</ns1:isTriageOwner>
+    <ns1:isBugname>M095 Trunk crash in ns</ns1:isBugname>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isReporter>Robert Ginda</ns1:isReporter>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ModifiedTime>a month ago</ns1:ModifiedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1394933">
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Dão Gottwald [::dao]"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Benson"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Theme&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Bookmarks toolbar dropzone needs new icon"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Spec here: "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
+  <rdf:Description rdf:about="Bug 133304">
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isComponent>Selection</ns1:isComponent>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isDescription>When I compose a new message, I type in an address, hit tab, type in a subject,
+hit tab.  I expect to see the blinking cursor now displayed in the body of the
+message, but there is no cursor to be seen anywhere.  If I start typing, the
+text I typed appears where you would expect it at the top of the composition
+window, and so does the cursor, but until I type, the cursor is lost.
+
+I have seen similar problem typing into form windows in the browser, but I can't
+replicate the behaviour as reliably as in the mail composition window.
+
+Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:0.9.9+) Gecko/20020325</ns1:isDescription>
+    <ns1:isReporter>Michael Baffoni</ns1:isReporter>
+    <ns1:isBugname>No blinking caret in mail body</ns1:isBugname>
+    <ns1:ModifiedTime>17 years ago</ns1:ModifiedTime>
+    <ns1:isTriageOwner>Hsin-Yi Tsai [:hsinyi]</ns1:isTriageOwner>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 122312">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/No reported Default Action and cannont execute the default action ( to select&#10;them ) for HTML Select Options."/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/16 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/[Active Accessibility] No Default"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/XUL&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Neil Deakin"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/John Gaunt (redfive)"/>
+  <rdf:Description rdf:about="Bug 1393507">
+    <ns1:isTriageOwner>:Gijs (he/him)</ns1:isTriageOwner>
+    <ns1:isComponent>Toolbars and Customization</ns1:isComponent>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isDescription>New "Bookmarks Toolbar Items" icon in Bookmarks Toolbar in "Customize..." mode is too dark after
+
+STR:
+1. Open "Customize..." mode
+2. Look on far left in Bookmarks Toolbar on "Bookmarks Toolbar Items" icon
+and see that it's full black, instead of grey, which makes it inconsistent with other icons in Location Bar in Bookmarks Bar
+
+Caused by:</ns1:isDescription>
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isReporter>Virtual_ManPL [:Virtual] - (please needinfo? me - so I will see your comment/reply/question/etc.)</ns1:isReporter>
+    <ns1:isBugname>"Bookmarks Toolbar Items" icon in Bookmarks Toolbar in "Customize</ns1:isBugname>
+    <ns1:isAssignee>[:Towkir] Ahmed</ns1:isAssignee>
+    <ns1:ModifiedTime>a year ago</ns1:ModifiedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1361695">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/General&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Dão Gottwald [::dao]"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/4 days ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Justin Dolske [:Dolske]"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Add illustration to about:license"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/mockup: "/>
+  <rdf:Description rdf:about="Bug 1486779">
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:ModifiedTime>5 months ago</ns1:ModifiedTime>
+    <ns1:isReporter>Adam Hillier :ahillier</ns1:isReporter>
+    <ns1:isDescription>We need to add the custom header, author label, etc.</ns1:isDescription>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:ReportedTime>8 months ago</ns1:ReportedTime>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:isBugname>Update doorhanger to reflect new designs</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 118858">
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/General&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/dsirnapalli"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/here is the simple test case.&#10;-----------&#10;&lt;html&gt;&#10;&lt;title&gt; nsIAccessible Interface Test Case &lt;/title&gt;&#10;&lt;body&gt;&#10;&lt;b&gt; Simple text which is not focusable &lt;/b&gt;&#10;&#10;&lt;br&gt;&lt;br&gt;&#10;&lt;button value="submit"&gt; Submit &lt;/button&gt;&#10;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;---------------------------&#10;Open the above test case in Mozilla or mfcEmbed. Run mozInspect, click on "show &#10;highlight rectangle" and move the cursor over to the text "Simple text which is &#10;not focusable".Watch the value of state.It shows&#10;"read only,focusable,selectable". It should not show focusable since text is &#10;not focusable. IE shows "read only,selectable".'/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/15 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Active Accessibility: ns"/>
+  <rdf:Description rdf:about="Bug 130447">
+    <ns1:isBugname>Clicking on anchor goes to top of page, entering the URL directly doesn't</ns1:isBugname>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isDescription>If you go to the above URL, which is to an anchor in the Java documentation, the
+browser brings up the page scrolled to the anchor correctly. If you click on the
+link to the same anchor on the page the browser scrolls to the top of the page,
+instead. The link to the anchor can be found in the 'Method Index' section, it
+is the last link in that section.
+This applies to all links in the Java documentation, at least.</ns1:isDescription>
+    <ns1:isTriageOwner>Kyle Machulis [:qdot] [:kmachulis]</ns1:isTriageOwner>
+    <ns1:ModifiedTime>11 years ago</ns1:ModifiedTime>
+    <ns1:isComponent>Document Navigation</ns1:isComponent>
+    <ns1:isReporter>A. Craig West</ns1:isReporter>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 166704">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/11 years ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/If you use Alt+Tab, but let go of the alt before the tab, typeaheadfind gets&#10;disabled.&#10;&#10;This is because typeaheadfind receives a DOMMenuBarActive event, but not a&#10;DOMMenuBarInactive event. It turns out that ToggleMenuActiveState() uses&#10;SetActive(PR_TRUE) to turn on menus, but it doesn't use SetActive(PR_FALSE) to&#10;turn them off. SetActive is where the DOMMenuBar* events are fired.&#10;&#10;This occurs on Windows, possibly on Linux."/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Alt+tabbing to another app &amp; back can disable typeaheadfind"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Find In Page&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
+  <rdf:Description rdf:about="Bug 560759">
+    <ns1:isProduct>support.mozilla.org</ns1:isProduct>
+    <ns1:ReportedTime>9 years ago</ns1:ReportedTime>
+    <ns1:isComponent>Knowledge Base Articles</ns1:isComponent>
+    <ns1:isTriageOwner>Joni Savage ("need info" me)</ns1:isTriageOwner>
+    <ns1:isDescription>Filed this as a spinoff for</ns1:isDescription>
+    <ns1:ModifiedTime>9 years ago</ns1:ModifiedTime>
+    <ns1:isAssignee>Kadir Topal [:atopal]</ns1:isAssignee>
+    <ns1:isReporter>Paul Craciunoiu [:paulc]</ns1:isReporter>
+    <ns1:isBugname>Rename/Delete duplicate KB article names in preparation for encoding conversion to UTF8</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 135196">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a month ago"/>
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/When I press F7 in 2002 040303, nothing happens in the browser window, and the&#10;following appears on the JS console:&#10;&#10;Error: uncaught exception: [Exception... "Component returned failure code:&#10;0x8000ffff (NS_ERROR_UNEXPECTED) [nsIPrefBranch.getBoolPref]"  nsresult:&#10;"0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: &lt;unknown filename&gt; ::&#10;onxblkeypress :: line 4"  data: no]'/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Jesse Ruderman"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/F7 to toggle browse-with-caret hits a JS error"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/User events and focus handling&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Hsin-Yi Tsai [:hsinyi]"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
+  <rdf:Description rdf:about="Bug 166704">
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isBugname>Alt+tabbing to another app &amp; back can disable typeaheadfind</ns1:isBugname>
+    <ns1:isComponent>Find In Page</ns1:isComponent>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isDescription>If you use Alt+Tab, but let go of the alt before the tab, typeaheadfind gets
+disabled.
+
+This is because typeaheadfind receives a DOMMenuBarActive event, but not a
+DOMMenuBarInactive event. It turns out that ToggleMenuActiveState() uses
+SetActive(PR_TRUE) to turn on menus, but it doesn't use SetActive(PR_FALSE) to
+turn them off. SetActive is where the DOMMenuBar* events are fired.
+
+This occurs on Windows, possibly on Linux.</ns1:isDescription>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:ModifiedTime>11 years ago</ns1:ModifiedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 166340">
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/User-Agent:       Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.1b) Gecko/20020902&#10;Build Identifier: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.1b) Gecko/20020902&#10;&#10;For me typeaheadfind won't find any of (at least) abgiloruz1 as the first&#10;character, in full search mode.&#10;&#10;see "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/type ahead find on full text won't find some characters"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Find In Page&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Tuukka Tolvanen (sp3000)"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/11 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
+  <rdf:Description rdf:about="Bug 111284">
+    <ns1:isComponent>General</ns1:isComponent>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:ModifiedTime>14 years ago</ns1:ModifiedTime>
+    <ns1:isDescription><![CDATA[Below is the shortened version of test case.
+----------------------
+<html>
+<head>
+<script type="text/javascript">
+
+function getAccessibleNode(startNode)
+{
+  var accessibleService = null;
+  var accessibleNode = null;
+  try{
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+   accessibleService = 
+Components.classes["@mozilla.org/accessibilityService;1"].createInstance();
+   accessibleService = 
+accessibleService.QueryInterface(Components.interfaces.nsIAccessibilityService);
+  }
+  catch(e){
+   alert("Error getting accessibility service");
+  }
+
+  try{
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+   netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+   accessibleNode = accessibleService.getAccessibleFor(startNode);
+   return accessibleNode;
+  }
+  catch(e){
+   return "Exception";
+  }
+}
+
+function getDomNodeTable()
+{
+ try{
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+  var node = document.getElementsByTagName("table").item(0);
+  return node;
+ }
+ catch(e){
+  alert("Exception: " + e);
+ }
+}
+
+</script>
+</head>
+<body>
+
+<center>
+<table border cols=2 width="50%">
+<caption>Test Table</caption>
+ <tr>
+  <td> Row1,Col1</td>
+  <td> Row1,Col2</td>
+ </tr>
+ <tr>
+  <td> Row2,Col1</td>
+  <td> Row2,Col2</td>
+ </tr>
+ <tr>
+  <td> Row3,Col1</td>
+  <td> Row3,Col2</td>
+ </tr>
+</table>
+</center>
+
+<script type="text/javascript">
+try{
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+  netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+
+  var domNode = getDomNodeTable();
+  alert("domNode: " + domNode);
+  var accNode = getAccessibleNode(domNode);
+  alert("accNode: " + accNode);
+
+  var name = accNode.accName;
+  alert("Name: " + name);
+}
+catch(e){
+  alert("Exception: " + e);
+}
+</script>
+</body>
+</html>
+----------------------
+I am displaying the HTML table first, and using dom api i am getting the dom 
+node for table. after getting the dom node for table i am checking for wheather 
+that dom node is accessible or not.in this case the dom node is accessible.
+1.When i run this test case from mozilla  accNode.accName returns null.
+2.When i run this test case from mozilla and open mozInspect and check the 
+table node mozInspect shows null.that is fine but
+3.When i run this test case from IE and open mozInspect and check the table node 
+mozInspect returns "Test Table". It picks up the caption text for accName.
+I know the test case doesnot run properly from IE but i wanted to display table 
+so that i can use to test using mozInspect.]]></ns1:isDescription>
+    <ns1:isReporter>dsirnapalli</ns1:isReporter>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:isBugname>Active Accessibility: acc</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 560759">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/9 years ago"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/9 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Filed this as a spinoff for "/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/support.mozilla.org&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Rename/Delete duplicate KB article names in preparation for encoding conversion to UTF8"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Knowledge Base Articles&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Paul Craciunoiu [:paulc]"/>
-    <ns1:isTriageOwner rdf:resource='http://www.bugzilla.com/Joni Savage ("need info" me)'/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Kadir Topal [:atopal]"/>
+  <rdf:Description rdf:about="Bug 1453953">
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isBugname>regression: Zoom level indicator is ugly in its fade-in animation (choose the right animation scale for blob images)</ns1:isBugname>
+    <ns1:isDescription>mozregression --good 2018-04-01 --bad 2018-04-10 --pref gfx.webrender.all:true startup.homepage_welcome_url:'</ns1:isDescription>
+    <ns1:isTriageOwner>Jessie [:jbonisteel] plz needinfo</ns1:isTriageOwner>
+    <ns1:isAssignee>Alexis Beingessner [:Gankro]</ns1:isAssignee>
+    <ns1:isComponent>Graphics: WebRender</ns1:isComponent>
+    <ns1:ModifiedTime>7 months ago</ns1:ModifiedTime>
+    <ns1:ReportedTime>a year ago</ns1:ReportedTime>
+    <ns1:isReporter>Jan Andre Ikenmeyer [:darkspirit]</ns1:isReporter>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 129916">
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Add Accel+shift+z for redo on all platforms"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Netscape is adding this keybinding because of a confidential customer&#10;requirement; if Mozilla would like to be compatible, here's the change,&#10;otherwise we'll have to take it in our tree only.&#10;&#10;Our normal binding for redo, Accel+Y will remain for now.&#10;&#10;Accel+shift+Z is actually used for redo in a variety of Windows programs,&#10;including notepad, Visual Studio, and ordinary text fields. There is no clear&#10;standard for redo, except that it can be Accel+Y or Accel+shift+Z."/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a month ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Hsin-Yi Tsai [:hsinyi]"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/User events and focus handling&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
+  <rdf:Description rdf:about="Bug 1449976">
+    <ns1:ModifiedTime>a year ago</ns1:ModifiedTime>
+    <ns1:isReporter>Fanolian</ns1:isReporter>
+    <ns1:isComponent>Graphics: WebRender</ns1:isComponent>
+    <ns1:isDescription>User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0
+Build ID: 20180329100042
+
+Steps to reproduce:
+
+1. Sign in to Gmail.
+2. Go to Gmail's Settings &gt; General.
+3. Enable "Show snippets - Show snippets of the message (like Google web search!)" . The option is near the bottom.
+4. Go to Inbox or All Mail, which shows a list of email and some of the email content (snippets).
+
+5. Turn on devtool's Inspector on the page.
+6. Add the following rule in the Rules panel on the right, to set text-shadows on all text:
+* { text-shadow: 1px 1px; }
+7. Observe the snippets
+
+
+Actual results:
+
+Text shadow is showing on clipped snippets, overlapping the date, and extending towards the right end of the page.
+(Please see the attached screenshot.)
+
+
+Expected results:
+
+With WebRender is off, text shadow is not shown on those clipped text.</ns1:isDescription>
+    <ns1:isBugname>[Web</ns1:isBugname>
+    <ns1:ReportedTime>a year ago</ns1:ReportedTime>
+    <ns1:isAssignee>Alexis Beingessner [:Gankro]</ns1:isAssignee>
+    <ns1:isTriageOwner>Jessie [:jbonisteel] plz needinfo</ns1:isTriageOwner>
+    <ns1:isProduct>Core</ns1:isProduct>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 754762">
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Firewall hole for web2.stage"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/7 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Yo netops, bugzilla-stage-tip.mozilla.org can't auto update because it can't see it's daddy, therefore pls halp!&#10;&#10;web2.stage.bugs.scl3.mozilla.com -&gt; bzr.mozilla.org, ports 4155 and 22"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/6 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/NetOps: DC ACL Request&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Shyam Mani [:fox2mike]"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Infrastructure &amp; Operations&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Newman [:adam]"/>
+  <rdf:Description rdf:about="Bug 120813">
+    <ns1:ModifiedTime>15 years ago</ns1:ModifiedTime>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isDescription><![CDATA[try the below test case..
+----------------------------------
+<html>
+<title> nsIAccessible Interface Test Case </title>
+<body>
+
+<b><center> HTML Elements </center></b>
+<br>
+<!-- Test Anchor -->
+<!-- Anchor linking to external file -->
+<b> Testing Link </b>
+<br>
+<a href="]]></ns1:isDescription>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isBugname>Active Accessibility: Mfc</ns1:isBugname>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:isComponent>General</ns1:isComponent>
+    <ns1:isReporter>dsirnapalli</ns1:isReporter>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1404558">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/regression: Crash in [@ mozalloc"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Regression? Just updated to this build before the quoted crash happened.&#10;&#10;(Jan Andre Ikenmeyer [:darkspirit] from "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Jan Andre Ikenmeyer [:darkspirit]"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Alexis Beingessner [:Gankro]"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Jessie [:jbonisteel] plz needinfo"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a year ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Graphics: WebRender&#10;          "/>
+  <rdf:Description rdf:about="Bug 1472819">
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:ModifiedTime>9 months ago</ns1:ModifiedTime>
+    <ns1:isDescription>STR:
+
+- Open today's Nightly (63.0a1 (2018-07-02) (64-bit) on MacOS), with a fresh profile.
+- Observe that the "Okay, got it" button that dismisses the explanatory text above the Pocket section is pushed below the line of text it dismisses (screenshot attached).
+
+Expected result (I think):
+- The button should be in line with the text, as with the "Import now" button for the migration text (below the searchbar, also visible in the screenshot).</ns1:isDescription>
+    <ns1:ReportedTime>10 months ago</ns1:ReportedTime>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:isReporter>Adam Hillier :ahillier</ns1:isReporter>
+    <ns1:isBugname>Pocket section CSS issue: dismiss button for the explanation text has been pushed down the page</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1403167">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a year ago"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Jan Andre Ikenmeyer [:darkspirit]"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Nightly 58 x64 20170926100259 de_DE @ Debian Testing (KDE / Radeon RX480)&#10;gpu-process + layers force accel + webrender + webrendest + layersfree&#10;&#10;I just updated to this build, restarted Nightly and got multiple tab crashes on about:newtab and also on web tabs, but not immediately everytime.&#10;Now I disabled webrendest and it seems stable.&#10;&#10;"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Crash in [@ mozilla::layout::Text"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Alexis Beingessner [:Gankro]"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Jessie [:jbonisteel] plz needinfo"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Graphics: WebRender&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
+  <rdf:Description rdf:about="Bug 1404558">
+    <ns1:ModifiedTime>2 years ago</ns1:ModifiedTime>
+    <ns1:isDescription>Regression? Just updated to this build before the quoted crash happened.
+
+(Jan Andre Ikenmeyer [:darkspirit] from</ns1:isDescription>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isTriageOwner>Jessie [:jbonisteel] plz needinfo</ns1:isTriageOwner>
+    <ns1:isAssignee>Alexis Beingessner [:Gankro]</ns1:isAssignee>
+    <ns1:isComponent>Graphics: WebRender</ns1:isComponent>
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isBugname>regression: Crash in [@ mozalloc</ns1:isBugname>
+    <ns1:isReporter>Jan Andre Ikenmeyer [:darkspirit]</ns1:isReporter>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 710407">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Android Sync&#10;          "/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox for Android&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Sync's behavior on android is undefined if more than one version of firefox is installed. What, if any, should the behavior be, and is the desired behavior even technically feasible?"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/:Grisha Kruglov"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Allison Naaktgeboren :ally"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Define and document Android Sync behavior if multiple Firefox versions (e"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Allison Naaktgeboren :ally"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/7 years ago"/>
+  <rdf:Description rdf:about="Bug 1480508">
+    <ns1:isReporter>Kate Hudson :k88hudson</ns1:isReporter>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:ModifiedTime>8 months ago</ns1:ModifiedTime>
+    <ns1:isDescription>We would like to automatically add a Top Site Search Shortcut to users' for existing users if they have an open (i.e. unpinned) tile available and the host name (google, amazon) is found in their top sites.
+
+Note that we should store some kind of state in persistent storage when we do this so that we do not add a second time if it is removed/edited/replaced.</ns1:isDescription>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:ReportedTime>9 months ago</ns1:ReportedTime>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isBugname>Add Top Site Search Shortcuts automatically for new and existing users</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 103903">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a month ago"/>
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/When inspecting a window object in the js debugger, nsHTMLImageAccessible.cpp&#10;causes a crash.&#10;&#10;Index: nsHTMLImageAccessible.cpp&#10;===================================================================&#10;RCS file: /cvsroot/mozilla/accessible/src/nsHTMLImageAccessible.cpp,v&#10;retrieving revision 1.11&#10;diff -u -r1.11 nsHTMLImageAccessible.cpp&#10;--- nsHTMLImageAccessible.cpp&#9;2001/09/25 22:32:27&#9;1.11&#10;+++ nsHTMLImageAccessible.cpp&#9;2001/10/09 19:37:27&#10;@@ -58,7 +58,8 @@&#10;   nsCOMPtr&lt;nsIDOMElement&gt; element(do_QueryInterface(aDOMNode));&#10;   nsCOMPtr&lt;nsIDocument&gt; doc;&#10;   nsCOMPtr&lt;nsIPresShell&gt; shell(do_QueryReferent(mPresShell));&#10;-  NS_ASSERTION(shell,"Shell is gone!!! What are we doing here?");&#10;+  if (NS_WARN_IF_FALSE(shell,"Shell is gone!!! What are we doing here?"))&#10;+    return;&#10; &#10;   shell-&gt;GetDocument(getter_AddRefs(doc));&#10;   nsAutoString mapElementName;&#10;&#10;Top of stack looked like this...&#10;(gdb) where&#10;#0  0x42571aa4 in nsHTMLImageAccessible::nsHTMLImageAccessible (&#10;    this=0x8b9ab70, aDOMNode=0x8ba8e30, aShell=0x0)&#10;    at nsHTMLImageAccessible.cpp:63&#10;#1  0x425690bf in nsAccessibilityService::CreateXULImageAccessible (&#10;    this=0x8db51f0, aNode=0x8ba8e30, _retval=0xbfff955c)&#10;    at nsAccessibilityService.cpp:351&#10;#2  0x401e9300 in XPTC_InvokeByIndex (that=0x8db51f0, methodIndex=15, &#10;    paramCount=2, params=0xbfff954c) at xptcinvoke_unixish_x86.cpp:153'/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/DOM: Core &amp; HTML&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/M095 Trunk crash in ns"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Robert Ginda"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Hsin-Yi Tsai [:hsinyi]"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
+  <rdf:Description rdf:about="Bug 102679">
+    <ns1:isBugname>Composer loses focus after deleting a linked image</ns1:isBugname>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isTriageOwner>Hsin-Yi Tsai [:hsinyi]</ns1:isTriageOwner>
+    <ns1:isComponent>User events and focus handling</ns1:isComponent>
+    <ns1:isDescription>Build ID: 20011001
+
+Composer looses focus after deleting a linked image.
+
+Reproducible: Always
+
+Steps to Reproduce:
+1.Open Composer
+2.Insert an image using the image button on the toolbar
+3.Highlight the image and click the link button on the toolbar then create a
+link and click ok
+4.Click the image and delete it
+5.Type some text
+
+Actual Results:
+The text does not type because the composer window has lost focus.  In order to
+type again you need to click in the window.
+
+Expected Results:
+I would expect that composer would maintain it's focus after deleting a linked
+image.</ns1:isDescription>
+    <ns1:isReporter>TucsonTester2</ns1:isReporter>
+    <ns1:ModifiedTime>a month ago</ns1:ModifiedTime>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1470284">
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Amy Lee [:amylee] UX"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/9 months ago"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/New Tab Highlight card no image default colour is too light (Dark Theme)"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/10 months ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Hi, &#10;&#10;The default fill colour for a Highlight card with no image is currently too light on Dark theme. Can you please change this to Grey 60 ##4a4a4f. See attached for reference"/>
+  <rdf:Description rdf:about="Bug 1403851">
+    <ns1:isReporter>Johann Hofmann [:johannh]</ns1:isReporter>
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isComponent>Theme</ns1:isComponent>
+    <ns1:ModifiedTime>2 years ago</ns1:ModifiedTime>
+    <ns1:isAssignee>[:Towkir] Ahmed</ns1:isAssignee>
+    <ns1:isTriageOwner>Dão Gottwald [::dao]</ns1:isTriageOwner>
+    <ns1:isBugname>Bookmark toolbar icons are too bright in dark theme</ns1:isBugname>
+    <ns1:isDescription>They should have the same color as other toolbar icons, see</ns1:isDescription>
+    <ns1:isProduct>Firefox</ns1:isProduct>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 131089">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/XUL&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/David Baron :dbaron: 🏴󠁵󠁳󠁣󠁡󠁿 ⌚UTC-7"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/crashes [@ ns"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Neil Deakin"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/A topcrash with the stack below started appearing in 2002-03-10-11 builds.  I&#10;assume it was caused by the checkin:&#10;&#10;date: 2002/03/10 06:21:38;  author: aaronl%netscape.com;  state: Exp;  lines:&#10;+471 -215&#10;Fixes "/>
+  <rdf:Description rdf:about="Bug 1403875">
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isComponent>Theme</ns1:isComponent>
+    <ns1:isReporter>[:Towkir] Ahmed</ns1:isReporter>
+    <ns1:isAssignee>[:Towkir] Ahmed</ns1:isAssignee>
+    <ns1:isTriageOwner>Dão Gottwald [::dao]</ns1:isTriageOwner>
+    <ns1:ModifiedTime>2 years ago</ns1:ModifiedTime>
+    <ns1:isDescription>The bookmarks toolbar dropzone icon accidentally lost it's svg properties like fill, fill-opacity.
+Hence it looks black on dark theme.
+
+
+A follow up from</ns1:isDescription>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isBugname>Bookmarks toolbar dropzone icon doesn't have the right color with the Dark theme</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 109851">
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/I've been noticing double events for some time -- but they don't occur in MFCEmbed.&#10;&#10;It comes down to the fact that HTML events are bubbling up to the chrome's&#10;nsRootAccessible as well. We've been creating an nsRootAccessible that listens&#10;for events for both the HTML document and the XUL document.&#10;&#10;I believe we really only want to create the nsRootAccessible's for the true root."/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/15 years ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Bookmarks &amp; History&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Active Accessibility: extra accessible events being generated"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
+  <rdf:Description rdf:about="Bug 135196">
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ModifiedTime>a month ago</ns1:ModifiedTime>
+    <ns1:isReporter>Jesse Ruderman</ns1:isReporter>
+    <ns1:isComponent>User events and focus handling</ns1:isComponent>
+    <ns1:isDescription><![CDATA[When I press F7 in 2002 040303, nothing happens in the browser window, and the
+following appears on the JS console:
+
+Error: uncaught exception: [Exception... "Component returned failure code:
+0x8000ffff (NS_ERROR_UNEXPECTED) [nsIPrefBranch.getBoolPref]"  nsresult:
+"0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: <unknown filename> ::
+onxblkeypress :: line 4"  data: no]]]></ns1:isDescription>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isBugname>F7 to toggle browse-with-caret hits a JS error</ns1:isBugname>
+    <ns1:isTriageOwner>Hsin-Yi Tsai [:hsinyi]</ns1:isTriageOwner>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 120813">
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/18 years ago"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/15 years ago"/>
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/try the below test case..&#10;----------------------------------&#10;&lt;html&gt;&#10;&lt;title&gt; nsIAccessible Interface Test Case &lt;/title&gt;&#10;&lt;body&gt;&#10;&#10;&lt;b&gt;&lt;center&gt; HTML Elements &lt;/center&gt;&lt;/b&gt;&#10;&lt;br&gt;&#10;&lt;!-- Test Anchor --&gt;&#10;&lt;!-- Anchor linking to external file --&gt;&#10;&lt;b&gt; Testing Link &lt;/b&gt;&#10;&lt;br&gt;&#10;&lt;a href="'/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Active Accessibility: Mfc"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/General&#10;          "/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/dsirnapalli"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
+  <rdf:Description rdf:about="Bug 1470284">
+    <ns1:ModifiedTime>10 months ago</ns1:ModifiedTime>
+    <ns1:isReporter>Amy Lee [:amylee] UX</ns1:isReporter>
+    <ns1:isDescription>Hi, 
+
+The default fill colour for a Highlight card with no image is currently too light on Dark theme. Can you please change this to Grey 60 ##4a4a4f. See attached for reference</ns1:isDescription>
+    <ns1:isBugname>New Tab Highlight card no image default colour is too light (Dark Theme)</ns1:isBugname>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:ReportedTime>10 months ago</ns1:ReportedTime>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 148007">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Disability Access APIs&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/ns"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Marco Zehe (:MarcoZ) [Out sick until further notice, NI and reviews will not be answered]"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/&lt;label value="Click here:" control="open-button"/&gt;&#10;&#10;&lt;description&gt;&#10;  Testing Description tag for Accessibility. &#10;&lt;/description&gt;  &#10;&#10;Add the above text to the xul file and open in mozilla or embedding application.&#10;open Inspect and click on "show highlight rectangle". Move the cursor on to the&#10;label text or description text. watch the State attribute in Inspect tool. You&#10;see "readonly, focusable, selectable". It should show only "readonly", since&#10;text is not focusable and selectable.'/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/dsirnapalli"/>
+  <rdf:Description rdf:about="Bug 1471391">
+    <ns1:isDescription>We need to create a UI template that can communicate with AS Router via actions like the existing ASR templates. It should also implement telemetry and impression collection in a similar way.
+
+Note that this may need to be broken down into more bugs to handle separate aspects of the UI.</ns1:isDescription>
+    <ns1:isBugname>Create CFR doorhanger UI template</ns1:isBugname>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:ModifiedTime>6 months ago</ns1:ModifiedTime>
+    <ns1:ReportedTime>10 months ago</ns1:ReportedTime>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isReporter>Kate Hudson :k88hudson</ns1:isReporter>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1486779">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/8 months ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Update doorhanger to reflect new designs"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/We need to add the custom header, author label, etc."/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/5 months ago"/>
+  <rdf:Description rdf:about="Bug 754762">
+    <ns1:ReportedTime>7 years ago</ns1:ReportedTime>
+    <ns1:ModifiedTime>6 years ago</ns1:ModifiedTime>
+    <ns1:isProduct>Infrastructure &amp; Operations</ns1:isProduct>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:isAssignee>Adam Newman [:adam]</ns1:isAssignee>
+    <ns1:isReporter>Shyam Mani [:fox2mike]</ns1:isReporter>
+    <ns1:isDescription>Yo netops, bugzilla-stage-tip.mozilla.org can't auto update because it can't see it's daddy, therefore pls halp!
+
+web2.stage.bugs.scl3.mozilla.com -&gt; bzr.mozilla.org, ports 4155 and 22</ns1:isDescription>
+    <ns1:isComponent>NetOps: DC ACL Request</ns1:isComponent>
+    <ns1:isBugname>Firewall hole for web2.stage</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1472819">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/10 months ago"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/9 months ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/STR:&#10;&#10;- Open today's Nightly (63.0a1 (2018-07-02) (64-bit) on MacOS), with a fresh profile.&#10;- Observe that the &quot;Okay, got it&quot; button that dismisses the explanatory text above the Pocket section is pushed below the line of text it dismisses (screenshot attached).&#10;&#10;Expected result (I think):&#10;- The button should be in line with the text, as with the &quot;Import now&quot; button for the migration text (below the searchbar, also visible in the screenshot)."/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Pocket section CSS issue: dismiss button for the explanation text has been pushed down the page"/>
+  <rdf:Description rdf:about="Bug 122312">
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isReporter>John Gaunt (redfive)</ns1:isReporter>
+    <ns1:isComponent>XUL</ns1:isComponent>
+    <ns1:isBugname>[Active Accessibility] No Default</ns1:isBugname>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:ModifiedTime>16 years ago</ns1:ModifiedTime>
+    <ns1:isTriageOwner>Neil Deakin</ns1:isTriageOwner>
+    <ns1:isDescription>No reported Default Action and cannont execute the default action ( to select
+them ) for HTML Select Options.</ns1:isDescription>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 129628">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/Sometimes GetPrimaryFrameFor to be called during the destruction phase of the&#10;frame manager. This causes it to return an invalid pointer to a frame.&#10;&#10;GetPrimaryFrameFor needs to check a flag, and return early if the frame manager&#10;is in the middle of it's destruction phase.&#10;&#10;This is the Bugzilla equivalent of Bugscape 12117&#10;("/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Layout&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Sean Voisen (:svoisen)"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Crash in ns"/>
+  <rdf:Description rdf:about="Bug 1394933">
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isReporter>Aaron Benson</ns1:isReporter>
+    <ns1:isBugname>Bookmarks toolbar dropzone needs new icon</ns1:isBugname>
+    <ns1:isComponent>Theme</ns1:isComponent>
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isDescription>Spec here:</ns1:isDescription>
+    <ns1:isAssignee>[:Towkir] Ahmed</ns1:isAssignee>
+    <ns1:isTriageOwner>Dão Gottwald [::dao]</ns1:isTriageOwner>
+    <ns1:ModifiedTime>2 years ago</ns1:ModifiedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 165632">
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Find In Page&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Get typeaheadfind building on mac"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/11 years ago"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/I have all the MozillaBuildList.pl changes, I think.&#10;I still need to generate the .xml build files.&#10;&#10;Unfortunately, I'm having a lot of bad luck getting Mozilla to build on my Mac&#10;at all. Tried pulling a fresh tree, getting CodeWarrior 7.2, but still no luck.&#10;So I can't move forward on this at the moment."/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
+  <rdf:Description rdf:about="Bug 75609">
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isDescription>The current build system uses a default WINVER of 0x0400.
+This gives us the lowest common denominator of Windows support.
+However it does not define some things we need to support MSAA (Microsoft 
+Active Accessibility), such as OBJID_WINDOW and WM_GETOBJECT.
+
+Is there any reason we can't use WINVER=0x0500 as the default now?
+
+I notice that in some modules, people are forcing WINVER = 0x0500 temporarily 
+before they include certain files.</ns1:isDescription>
+    <ns1:isTriageOwner></ns1:isTriageOwner>
+    <ns1:isBugname>Cannot use Windows MSAA support with WINVER=0x0400</ns1:isBugname>
+    <ns1:isProduct>SeaMonkey</ns1:isProduct>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:ReportedTime>18 years ago</ns1:ReportedTime>
+    <ns1:isComponent>Build Config</ns1:isComponent>
+    <ns1:ModifiedTime>15 years ago</ns1:ModifiedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1471243">
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/[Affected versions]:&#10;- Firefox Beta v62.0b3, Build ID 20180625141512&#10;&#10;[Affected Platforms]:&#10;- All Windows&#10;- All Mac&#10;- All Linux&#10;&#10;[Steps to reproduce]:&#10;1. Create a new Firefox profile.&#10;2. Start the browser with the new profile and observe the behavior.&#10;&#10;[Expected results]:&#10;- The "about:welcome" page is displayed as soon as the browser starts.&#10;&#10;[Actual results]:&#10;- The "about:newtab" page is briefly displayed before the "about:welcome" one.&#10;&#10;[Notes]:&#10;- The issue is not reproducible on slower machines.&#10;- This issue is not reproducible on Nightly because the about:welcome page is not set as the first run page.&#10;- Attached a screen recording of the issue: '/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Ciprian Muresan [:cmuresan], Experiments QA"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/The New Tab Page is briefly displayed before the about:welcome page when a new Beta profile is opened"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/10 months ago"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/8 months ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
+  <rdf:Description rdf:about="Bug 1480509">
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:isReporter>Tim Spurway [:tspurway]</ns1:isReporter>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:ModifiedTime>8 months ago</ns1:ModifiedTime>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:isDescription>For brand new Profiles, the @google and @amazon Search Shortcuts should show up in the user's default Top Sites under the following conditions:
+
+- @google will be added as #1 Top Site for all countries where Google is the default search provider
+- @amazon will be added as the #2 Top Site for all countries that have Amazon as a default Top Site.  In the case where Amazon is the only Shortcut added, it will, of course, be the #1 Top Site</ns1:isDescription>
+    <ns1:isBugname>Populating Default Profiles with @google and @amazon Top Site Search Shortcut tiles</ns1:isBugname>
+    <ns1:ReportedTime>9 months ago</ns1:ReportedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 166033">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Find In Page&#10;          "/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Keyboard menu navigation (access keys) not working due to perf 'improvement' for typeaheadfind"/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/K Chayka"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/17 years ago"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/SeaMonkey&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Aaron Leventhal"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/11 years ago"/>
-    <ns1:isDescription rdf:resource='http://www.bugzilla.com/win32 trunk build 2002083108, win98se&#10;&#10;When the keyboard is used to access menu items, the initial keyboard shortcut&#10;does drop down the menu, but typing the letter for a particular menu item&#10;initiates a "find in page" for that letter instead of initiating the menu item.&#10; Happens with a new profile or an existing one.&#10;&#10;Steps to reproduce:&#10;1. Create a new profile and start the browser (should go to default home page&#10;'/>
+  <rdf:Description rdf:about="Bug 1487118">
+    <ns1:isReporter>Adam Hillier :ahillier</ns1:isReporter>
+    <ns1:isComponent>Activity Streams: Newtab</ns1:isComponent>
+    <ns1:ModifiedTime>7 months ago</ns1:ModifiedTime>
+    <ns1:isDescription></ns1:isDescription>
+    <ns1:isTriageOwner>Tim Spurway [:tspurway]</ns1:isTriageOwner>
+    <ns1:ReportedTime>8 months ago</ns1:ReportedTime>
+    <ns1:isBugname>Cleanup CFR recommendations when the experiment/ASRouter gets disabled</ns1:isBugname>
+    <ns1:isAssignee>Adam Hillier :ahillier</ns1:isAssignee>
+    <ns1:isProduct>Firefox</ns1:isProduct>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1449976">
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/[Web"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/a year ago"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/a year ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Graphics: WebRender&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0&#10;Build ID: 20180329100042&#10;&#10;Steps to reproduce:&#10;&#10;1. Sign in to Gmail.&#10;2. Go to Gmail's Settings &gt; General.&#10;3. Enable &quot;Show snippets - Show snippets of the message (like Google web search!)&quot; . The option is near the bottom.&#10;4. Go to Inbox or All Mail, which shows a list of email and some of the email content (snippets).&#10;&#10;5. Turn on devtool's Inspector on the page.&#10;6. Add the following rule in the Rules panel on the right, to set text-shadows on all text:&#10;* { text-shadow: 1px 1px; }&#10;7. Observe the snippets&#10;&#10;&#10;Actual results:&#10;&#10;Text shadow is showing on clipped snippets, overlapping the date, and extending towards the right end of the page.&#10;(Please see the attached screenshot.)&#10;&#10;&#10;Expected results:&#10;&#10;With WebRender is off, text shadow is not shown on those clipped text."/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Fanolian"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Core&#10;          "/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Alexis Beingessner [:Gankro]"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Jessie [:jbonisteel] plz needinfo"/>
+  <rdf:Description rdf:about="Bug 1363028">
+    <ns1:ModifiedTime>2 years ago</ns1:ModifiedTime>
+    <ns1:isAssignee>[:Towkir] Ahmed</ns1:isAssignee>
+    <ns1:isTriageOwner>Dão Gottwald [::dao]</ns1:isTriageOwner>
+    <ns1:isDescription>For Photon we want new set of bookmark toolbar buttons, see</ns1:isDescription>
+    <ns1:isReporter>Johann Hofmann [:johannh]</ns1:isReporter>
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isProduct>Firefox</ns1:isProduct>
+    <ns1:isBugname>Update bookmark toolbar icons</ns1:isBugname>
+    <ns1:isComponent>Theme</ns1:isComponent>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1480509">
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/For brand new Profiles, the @google and @amazon Search Shortcuts should show up in the user's default Top Sites under the following conditions:&#10;&#10;- @google will be added as #1 Top Site for all countries where Google is the default search provider&#10;- @amazon will be added as the #2 Top Site for all countries that have Amazon as a default Top Site.  In the case where Amazon is the only Shortcut added, it will, of course, be the #1 Top Site"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Tim Spurway [:tspurway]"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Populating Default Profiles with @google and @amazon Top Site Search Shortcut tiles"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/8 months ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Activity Streams: Newtab&#10;          "/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/8 months ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/Adam Hillier :ahillier"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
+  <rdf:Description rdf:about="Bug 1403167">
+    <ns1:ModifiedTime>2 years ago</ns1:ModifiedTime>
+    <ns1:isBugname>Crash in [@ mozilla::layout::Text</ns1:isBugname>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isTriageOwner>Jessie [:jbonisteel] plz needinfo</ns1:isTriageOwner>
+    <ns1:isAssignee>Alexis Beingessner [:Gankro]</ns1:isAssignee>
+    <ns1:isReporter>Jan Andre Ikenmeyer [:darkspirit]</ns1:isReporter>
+    <ns1:isComponent>Graphics: WebRender</ns1:isComponent>
+    <ns1:ReportedTime>2 years ago</ns1:ReportedTime>
+    <ns1:isDescription>Nightly 58 x64 20170926100259 de_DE @ Debian Testing (KDE / Radeon RX480)
+gpu-process + layers force accel + webrender + webrendest + layersfree
+
+I just updated to this build, restarted Nightly and got multiple tab crashes on about:newtab and also on web tabs, but not immediately everytime.
+Now I disabled webrendest and it seems stable.</ns1:isDescription>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1306942">
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Gabriel [:gl] (ΦωΦ)"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Fix all-tabs-menu position in RTL locales"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/3 years ago"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Inspector&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/User Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0&#10;Build ID: 20161001030430&#10;&#10;Steps to reproduce:&#10;&#10;1. Start Nightly in RTL locales&#10;2. Open DevTools &gt; Inspector&#10;3. Resize inspector sidebar until displaying all-tabs-menu&#10;&#10;&#10;Actual results:&#10;&#10;all-tabs-menu position is the start side.&#10;&#10;Regression range:&#10;"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/10 months ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/DevTools&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/magicp"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
+  <rdf:Description rdf:about="Bug 129916">
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isTriageOwner>Hsin-Yi Tsai [:hsinyi]</ns1:isTriageOwner>
+    <ns1:isComponent>User events and focus handling</ns1:isComponent>
+    <ns1:isDescription>Netscape is adding this keybinding because of a confidential customer
+requirement; if Mozilla would like to be compatible, here's the change,
+otherwise we'll have to take it in our tree only.
+
+Our normal binding for redo, Accel+Y will remain for now.
+
+Accel+shift+Z is actually used for redo in a variety of Windows programs,
+including notepad, Visual Studio, and ordinary text fields. There is no clear
+standard for redo, except that it can be Accel+Y or Accel+shift+Z.</ns1:isDescription>
+    <ns1:ModifiedTime>a month ago</ns1:ModifiedTime>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isBugname>Add Accel+shift+z for redo on all platforms</ns1:isBugname>
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1403851">
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Bookmark toolbar icons are too bright in dark theme"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Dão Gottwald [::dao]"/>
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Theme&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/They should have the same color as other toolbar icons, see "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/Johann Hofmann [:johannh]"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
+  <rdf:Description rdf:about="Bug 905683">
+    <ns1:isAssignee>Kadir Topal [:atopal]</ns1:isAssignee>
+    <ns1:ReportedTime>6 years ago</ns1:ReportedTime>
+    <ns1:isProduct>support.mozilla.org</ns1:isProduct>
+    <ns1:isComponent>Knowledge Base Software</ns1:isComponent>
+    <ns1:isTriageOwner>Roland Tanglao needinfo please :rolandtanglao, :mohnkuchen, :adobo, :sinigang, :roland</ns1:isTriageOwner>
+    <ns1:isDescription>To integrate Optimizely with GA it needs to be loaded before GA, see documentation:</ns1:isDescription>
+    <ns1:isReporter>Kadir Topal [:atopal]</ns1:isReporter>
+    <ns1:ModifiedTime>6 years ago</ns1:ModifiedTime>
+    <ns1:isBugname>Move Optimizely snippet up, to load before GA</ns1:isBugname>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.bugzilla.com/Bug 1403875">
-    <ns1:isComponent rdf:resource="http://www.bugzilla.com/Theme&#10;          "/>
-    <ns1:isDescription rdf:resource="http://www.bugzilla.com/The bookmarks toolbar dropzone icon accidentally lost it's svg properties like fill, fill-opacity.&#10;Hence it looks black on dark theme.&#10;&#10;&#10;A follow up from "/>
-    <ns1:isProduct rdf:resource="http://www.bugzilla.com/Firefox&#10;          "/>
-    <ns1:isReporter rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
-    <ns1:isBugname rdf:resource="http://www.bugzilla.com/Bookmarks toolbar dropzone icon doesn't have the right color with the Dark theme"/>
-    <ns1:isAssignee rdf:resource="http://www.bugzilla.com/[:Towkir] Ahmed"/>
-    <ns1:isTriageOwner rdf:resource="http://www.bugzilla.com/Dão Gottwald [::dao]"/>
-    <ns1:ReportedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
-    <ns1:ModifiedTime rdf:resource="http://www.bugzilla.com/2 years ago"/>
+  <rdf:Description rdf:about="Bug 129628">
+    <ns1:ReportedTime>17 years ago</ns1:ReportedTime>
+    <ns1:isProduct>Core</ns1:isProduct>
+    <ns1:isAssignee>Aaron Leventhal</ns1:isAssignee>
+    <ns1:isTriageOwner>Sean Voisen (:svoisen)</ns1:isTriageOwner>
+    <ns1:isBugname>Crash in ns</ns1:isBugname>
+    <ns1:ModifiedTime>17 years ago</ns1:ModifiedTime>
+    <ns1:isComponent>Layout</ns1:isComponent>
+    <ns1:isReporter>Aaron Leventhal</ns1:isReporter>
+    <ns1:isDescription>Sometimes GetPrimaryFrameFor to be called during the destruction phase of the
+frame manager. This causes it to return an invalid pointer to a frame.
+
+GetPrimaryFrameFor needs to check a flag, and return early if the frame manager
+is in the middle of it's destruction phase.
+
+This is the Bugzilla equivalent of Bugscape 12117
+(</ns1:isDescription>
   </rdf:Description>
 </rdf:RDF>
